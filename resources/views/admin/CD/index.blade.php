@@ -63,7 +63,7 @@
             </div>
         </div>
 
-        <h4 style="font-weight: 900;color:darkred" class="mb-3 mt-5">Verifier Les CDs du Paiement</h4>
+        {{-- <h4 style="font-weight: 900;color:darkred" class="mb-3 mt-5">Verifier Les CDs du Paiement</h4>
         <div class="row">
             <div class="col">
                 <div class="card card-default border-primary">
@@ -107,6 +107,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 @endsection

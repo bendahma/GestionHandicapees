@@ -23,6 +23,7 @@ class HandsImport implements ToModel
     public function model(array $row)
     {
 
+
         // ini_set('memory_limit', '-1');
         ini_set('max_execution_time', 300); // 5 minutes
 
@@ -112,7 +113,9 @@ class HandsImport implements ToModel
         $renouvellement->DateRenouvellement = NULL;
         $renouvellement->AnneeRenouvelement = isset($row[15]) ? date('Y') : NULL;
         $hand->renouvellementdossier()->save($renouvellement);
-        
-        return $hand; 
+        try {
+            return $hand; 
+        } catch (\Throwable $th) {
+            dd($hand)    ;    }
     }
 }

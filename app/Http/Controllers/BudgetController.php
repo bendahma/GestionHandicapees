@@ -282,6 +282,9 @@ class BudgetController extends Controller
         $template->setValue('sr11', number_format($soldRest11,2,',',' '));
         $template->setValue('sr12', number_format($soldRest12,2,',',' '));
 
+        $template->setValue('consomme', number_format($budgetPaiement - $soldRest12,2,',',' '));
+
+
         ob_end_clean();
         ob_start();
         $template->saveAs(storage_path('StatBudget.docx'));
@@ -547,6 +550,8 @@ class BudgetController extends Controller
         $template->setValue('sr10', number_format($soldRest10,2,',',' '));
         $template->setValue('sr11', number_format($soldRest11,2,',',' '));
         $template->setValue('sr12', number_format($soldRest12,2,',',' '));
+       
+        $template->setValue('consomme', number_format($budgetAssurance - $soldRest12,2,',',' '));
 
         ob_end_clean();
         ob_start();

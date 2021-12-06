@@ -225,7 +225,7 @@
                       <label for="" class="font-weight-bold">Rappel</label>
                       <select name="meriteRappel" id="" class="form-control">
                         <option value="oui">Oui</option>
-                        <option value="non">Non</option>
+                        <option value="non" selected>Non</option>
                       </select>
                     </div>
                   </div>

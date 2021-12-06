@@ -18,7 +18,6 @@
                           <th>Nom & Prenom</th>
                           <th>Date Naissance</th>
                           <th>CCP</th>
-                          <th>La Paie</th>
                           <th></th>
                         </tr>
                       </thead>
@@ -26,16 +25,9 @@
                         @foreach ($hands as $n => $hand)
                           <tr>
                             <td>{{$n=$n+1}}</td>
-                            <td>{{$hand->nameFr}}</td>
-                            <td>{{date('d/m/Y', strtotime($hand->dob))}}</td>
-                            <td>{{isset($hand->paieinformation->CCP) ? $hand->paieinformation->CCP : ''}}</td>
-                            <td>
-                                  <a href="{{$hand->status->status == 'En cours' 
-                                                  ? route('historique.HistoriquePaie',$hand->id) 
-                                                  : route('hand.suspendu', $hand->id) }}" target="_blank">
-                                    {{$hand->status->status}}
-                                  </a>
-                            </td>
+                            <td>{{$hand->nameFr ?? ''}}</td>
+                            <td>{{date('d/m/Y', strtotime($hand->dob) ?? '')}}</td>
+                            <td>{{isset($hand->paieinformation->CCP) ? $hand->paieinformation->CCP : ''}}</td> 
                             <td>
                               <ul class="nav ">
                                    <div class="d-flex">
